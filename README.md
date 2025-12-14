@@ -77,4 +77,4 @@ Berisi laporan hasil implementasi
 ## templates
 Berisi template pesan Slack 
 ## Link repo
-- GitHub: https://github.com/<username>/wazuh-soar-alerting
+- GitHub: https://github.com/Sirojulf/Wazuh-SOAR-Alerting_1304212094_Muhammad-Sirojul-Fuad
