@@ -1,0 +1,19 @@
+*Wazuh FIM Alert*
+Monitor: {{ctx.monitor.name}}
+Trigger: {{ctx.trigger.name}}
+Severity: {{ctx.trigger.severity}}
+Period: {{ctx.periodStart}} - {{ctx.periodEnd}}
+Matches: {{ctx.results.0.hits.total.value}}
+
+{{#ctx.results.0.hits.hits}}
+• Time: {{_source.timestamp}}
+  Agent: {{_source.agent.name}} ({{_source.agent.id}})
+  Rule: {{_source.rule.id}} - {{_source.rule.description}} (level {{_source.rule.level}})
+  Event: {{_source.syscheck.event}}
+  Path: {{_source.syscheck.path}}
+  Hash: {{_source.syscheck.sha1_after}}
+{{/ctx.results.0.hits.hits}}
+
+{{^ctx.results.0.hits.hits}}
+No matching documents.
+{{/ctx.results.0.hits.hits}}

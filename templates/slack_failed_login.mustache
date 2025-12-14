@@ -1,0 +1,16 @@
+*Wazuh Failed Logon (4625)*
+Monitor: {{ctx.monitor.name}}
+Trigger: {{ctx.trigger.name}}
+Severity: {{ctx.trigger.severity}}
+Period: {{ctx.periodStart}} - {{ctx.periodEnd}}
+Matches: {{ctx.results.0.hits.total.value}}
+
+{{#ctx.results.0.hits.hits}}
+• Time: {{_source.timestamp}}
+  Agent: {{_source.agent.name}} ({{_source.agent.id}})
+  User: {{_source.data.win.eventdata.TargetDomainName}}\{{_source.data.win.eventdata.TargetUserName}}
+  Source IP: {{_source.data.win.eventdata.IpAddress}}:{{_source.data.win.eventdata.IpPort}}
+  LogonType: {{_source.data.win.eventdata.LogonType}}
+  Status/SubStatus: {{_source.data.win.eventdata.Status}} / {{_source.data.win.eventdata.SubStatus}}
+  FailureReason: {{_source.data.win.eventdata.FailureReason}}
+{{/ctx.results.0.hits.hits}}

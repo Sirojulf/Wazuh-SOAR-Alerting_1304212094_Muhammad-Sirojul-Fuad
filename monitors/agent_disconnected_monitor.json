@@ -1,0 +1,15 @@
+{
+    "size": 1,
+    "query": {
+        "match_all": {
+            "boost": 1
+        }
+    },
+    "sort": [
+        {
+            "timestamp": {
+                "order": "desc"
+            }
+        }
+    ]
+}

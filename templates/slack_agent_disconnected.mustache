@@ -1,0 +1,14 @@
+*Wazuh Agent Disconnected*
+Monitor: {{ctx.monitor.name}}
+Trigger: {{ctx.trigger.name}}
+Severity: {{ctx.trigger.severity}}
+Period: {{ctx.periodStart}} - {{ctx.periodEnd}}
+Matches: {{ctx.results.0.hits.total.value}}
+
+{{#ctx.results.0.hits.hits}}
+• Disconnected at: {{_source.disconnection_time}}
+  Agent: {{_source.name}}
+  IP: {{_source.ip}}
+  Status code: {{_source.status_code}}
+  Last keepalive: {{_source.lastKeepAlive}}
+{{/ctx.results.0.hits.hits}}
